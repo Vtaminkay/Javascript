@@ -1,0 +1,118 @@
+//👉 - Decimal to binary conversion
+console.log(decTobinary(decimal))
+let decimal= 56
+
+let binary=" "
+ 
+const decTobinary=(decimal)=>{
+
+while( decimal>0){
+    if(decimal%2==1)
+    {
+        binary="1" + binary
+    }
+    else{
+        binary= "0"+ binary
+    }
+    decimal= Math.floor(decimal/2)
+}
+return binary
+}
+console.log(decTobinary(decimal))
+
+//👉 - Moving zero to end - A 
+
+
+let arr=[1,2,3,4,0,0,0,9,8]
+let arr1= []
+let arr2=[]
+let finArr=[]
+
+for( let i of arr){
+if( i==0)
+{
+    arr1.push(i)
+}
+else 
+if( i!=0){
+    arr2.push(i)
+}}
+finArr= arr2.concat(arr1)
+console.log(finArr)
+
+// 👉 moving zero to end - using Array methods 
+arr=[1,2,3,9,0,0,0,8]
+
+const filterr= arr.filter(x=>x!=0)
+
+const filter2= arr.filter(x=> x==0)
+
+console.log( finarr= filterr.concat(filter2))
+
+//👉 HCF
+
+let hcf
+
+const n1= 60
+const n2= 72
+
+for ( let i=1; i<=n1 && i<=n2; i++){
+    if (n1%i==0 && n2%i==0){
+        hcf= i;
+    }
+}
+ console.log(hcf)
+
+//👉 hcf using arrow func 
+
+const findHcf= (a,b)=>{
+    let hcf;
+    let n1=a;
+    let n2=b;
+    for( let i=1; i<=n1 && i<=n2; i++){
+        if( n1%i==0 && n2%i==0)
+        {
+            hcf=i
+        }
+
+    }
+    x= `Hcf of ${n1} & ${n2} is: ${hcf}`
+    return x
+}
+
+ console.log(findHcf(60,72))
+ 
+ // 👉 Uppercase to Lowercase
+
+   let data= 'sjdHUkn'
+    let swap =''
+   for ( let i of data){
+    let c= i
+if(c== c.toUpperCase())
+{
+   swap +=c.toLowerCase()
+} 
+else
+swap += c.toUpperCase()
+  }
+
+   console.log(swap) 
+   
+   //  👉 date and time 
+ let today = new Date();
+
+let month= today.getMonth();
+let year = today.getFullYear();
+let date = today.getDate();
+let day= today.getDay();
+
+let current_date = `${date}/${month}/${year}`
+console.log(current_date)
+let addZero= (num)=>{
+    return num<10 ? `0${num}` : num
+}
+let hours= addZero(today.getHours());
+let minutes= addZero(today.getMinutes());
+let seconds= addZero(today.getSeconds());
+console.log( `${hours}:${minutes}:${seconds}`)
+
