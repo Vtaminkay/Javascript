@@ -1,0 +1,142 @@
+// 👉 area of traingle 
+let a= 5, b=6, c= 7
+ s=( a+b+c) / 2
+
+ area= Math.sqrt(s*(s-a)*(s-b)*(s-c))
+console.log(Math.round(area)) 
+
+//👉 String Methods 
+
+//👉 Slice()
+let string= 'Kabir Singh'
+let arr=[]
+arr.push(string.slice(6,12))
+
+ console.log(arr)
+ 
+ //👉 Split()- converts string to an array 
+  string_to_array =  (str) =>{
+        return str.trim().split(" ");
+   };
+   console.log(string_to_array(prompt('Enter the string')));
+   
+ 
+// 👉 check whether a string is blank
+
+const checkString=(str)=>
+{
+if (str.trim().length===0 ){
+    return `The string is empty`
+}
+else{
+    return`The String is not empty`
+}
+}
+console.log(checkString(prompt('Enter the string')));
+
+// 👉 Frequency check 
+phrase= 'oahhhahahhhaaaahaii  '
+
+freq= { }
+let maxValue=''
+//let x
+for(i of phrase){
+   //x=i
+   if(i in freq)
+    freq[i]++
+    else{
+        freq[i]=1
+    }
+if( maxValue==''||freq[i]>=freq[maxValue]){
+    maxValue=i
+}
+
+}
+console.log(freq) 
+console.log(`${maxValue} : ${freq[maxValue]}`)
+
+//👉- Truncate a sentence 
+const funcTruncate=(str, limit )=>{
+
+    limit= limit 
+    str= str.split(' ')
+   
+    if(str.length>limit)
+    {
+        var ans= str.slice(0,limit)
+        return ans.join(' ')+' '+'...'
+    }
+
+    return str.join(' ')
+
+  }
+
+  console.log(funcTruncate('Anjali Singh had died in the early hours of Sunday, when she was on her way home. A Baleno had hit her scooter, following which her body got stuck underneath the vehicle, and was dragged for at least 10 kilometres.', 10 ))
+
+//👉- Using regular expression 
+str= '<html> <body> Javascript<body>is not Java'
+
+  strnew= str.trim().replace(/(<([^>]+)>)/ig," ")
+  
+console.log(strnew)
+
+//👉- Counting paranthesis
+const splChar = ']]]]]]]]'
+
+const count = (splChar) => {
+
+  const spl = "[]";
+
+  let count = 0;
+
+  for (let i = 0; i < splChar.length; i++) {
+
+    if (!spl.includes(splChar[i])) {
+
+      continue;
+
+    }
+
+    count++;
+
+  }
+
+  return count;
+  };
+  
+  // 👉 bubblesort 
+let str=[]
+str= prompt("Enter 5 values").split('')
+console.log(str)
+let temp
+let j
+for(let j=0;j<5;j++)
+    {
+for( let i=0; i<5; i++){
+    if( str[i]> str[i+1]){
+temp= str[i]
+str[i]= str[i+1]
+str[i+1]= temp
+
+    }
+}
+}
+ console.log(str)
+ 
+ //👉 alphabatize a string 
+
+ newwwww=( 'Find the area of an GHGGHJKKKK wshsbUYY isosceles triangle whose equal sides are of length')
+ finalans= newwwww.split("").sort().join('').trim()
+ console.log(finalans)
+
+ //👉 coverting a string to abbreviated form 
+
+ abb= 'Khatija tul Kubra Khan'
+ abb1= abb.split(' ')
+ console.log(abb1)
+
+
+
+
+
+
