@@ -1,1 +1,108 @@
+// 👉 filter() - print only filter element
+
+let arr5 = [1,5,2,4,3]
+
+const filter = arr5.filter(x => x < 3)
+
+console.log(filter);
+
+// 👉 moving zero to end 
+arr=[1,2,3,9,0,0,0,8]
+
+const filterr= arr.filter(x=>x!=0)
+
+const filter2= arr.filter(x=> x==0)
+
+console.log( finarr= filterr.concat(filter2))
+
+//👉 map method - returns an array
+array= [1,2,5,7,8,30,6]
+ const h= array.map(y => 
+    
+        (y+2)
+        
+    )
+    console.log(h)
+ 
+
+ //👉 For each method - loops through the array elements , does not return an array 
+
+let q=  array.forEach(element => {
+    console.log(element)
+ });
+console.log(q) //returns undefined 
+
+ //👉sorting ascending 
+
+ let r= array.sort((a,b)=>a-b)
+ console.log(r) 
+ 
+ // 👉 some() - check the item {atleast one} , return true either false
+  console.log(array.some(x=> x==0))
+
+  // 👉 Every() - check the item {all} , return true either false
+
+  console.log(array.every(x=> x>0))
+
+  // 👉 Find() - print only first element
+
+  console.log(array.find(x=>x>2))
+
+// 👉 Find() - last element which meets the condition
+
+console.log(array.findLast(x=>x>2))
+
+// 👉 Unshift() - add item(s) in first position, make changes to the actual array
+
+let p=[1,5,3,9,8,4]
+console.log(p.unshift(4,3)); //returns the size of array after changed
+console.log(p);
+
+//👉 push()- Adds elements at the end of the arrays 
+
+let push=[1,2,3,4,5]
+push.push(9,8)
+console.log(push)
+
+//👉  fill()- adds elements from the mentioned position till end
+let fill=[ 4,6,7,3]
+
+console.log(fill.fill(0,2))
+
+// 👉 Shift() - remove the first element of array
+
+let j=[1,2,3,4,5]
+console.log(j.shift()); //returns how many elements it removed
+console.log(j) //returns the array 
+
+//👉at()- reurns the array value at the specified index
+const arr9= [1,2,3,4,89,45]
+console.log(arr9.at(4))
+
+//👉 flat()
+let arr13 = [1,5,2,[4],3,[5]]
+
+const flat = arr9.flat()
+
+console.log(flat)
+
+//👉 string method- from start index to end index
+
+let qq5 = "Hello this is siya";
+
+console.log(qq5);
+
+let ee5 = qq5.slice(0,5)
+
+console.log(ee5);
+
+
+
+//👉path without escaping the backslashes
+
+const filePath = String.raw`C:\Development\profile\aboutme.html`;
+
+console.log(`The file was uploaded from: ${filePath}`);
+
+
 
