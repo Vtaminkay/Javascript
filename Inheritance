@@ -1,1 +1,101 @@
+// Inheritance 
+class mainClass{
+
+constructor(actor, genre){ // mainclass constructor 
+    this.actor = actor 
+    this.genre= genre
+
+}
+
+Movie = ' '
+getInfo (name) {
+
+     return{ Actor: this.actor, genre: this.genre}
+}
+getMovieName(movie) {  
+this.Movie= movie
+}
+
+showMovie(){
+
+    return this.Movie
+
+}
+
+static admininfo() {  //private method- cannot be used by the subclass
+    return " This is the base class "
+}
+
+tryover(){
+    return 'Lets see if this gets overrided '
+}
+
+
+}
+
+class subClass extends mainClass{ // extended (or) derived class
+
+constructor(actor, genre ){
+super (actor, genre)  //super key word- inherits the mainclass constructor 
+
+}
+
+getsubAdmininfo() {
+    return 'This is the extended class' 
+}
+
+tryover(){
+    return ' This has been overrided '
+}
+ 
+}
+
+class anotherSub extends subClass{ // extending base class from base class- inherits both classes properties 
+
+
+}
+
+const admin= new mainClass('SRK', 'Action' ) // obj for mainclass
+const subAd = new subClass('VJ', 'Drama') //obj for subclass
+ console.log( admin.getInfo()); // accesing through main class object 
+ console.log( subAd.getInfo()); // accesing through main subclass object
+ admin.getMovieName('Pathan') 
+ subAd.getMovieName('Varisu')
+ console.log(admin.showMovie()); //output- Pathan
+ console.log( subAd.showMovie());//output- Varisu
+ console.log( subAd.getsubAdmininfo());  
+ /* console.log( admin.admininfo());
+ console.log( subAd.admininfo()); // cannot access through subclass object */ 
+ console.log( admin.tryover());
+ console.log( subAd.tryover()); // function overrides 
+ 
+const newSub= new subClass() 
+newSub.getMovieName('New movie')
+console.log( newSub.getsubAdmininfo()) // returns the function
+console.log( newSub.showMovie()) // output- New movie 
+
+
+// 👉 Prototypal Inheritance- One object inherits the properties of other objects 
+
+const tomato ={
+ color: red,
+ IsFruit(){
+      return 'False'
+ }
+
+};
+
+const apple ={
+color: green ,
+    IsNotFruit(){
+        return' True'
+    },
+    __proto__: tomato,  //inherits the tomato object
+};
+
+console.log( " Am I a fruit?- " +apple.IsFruit() ) // output - False 
+
+
+
+
 
