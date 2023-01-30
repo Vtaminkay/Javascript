@@ -1,0 +1,101 @@
+
+  class User {
+    #password;
+    constructor(name, userName, password) {
+      this.name = name;
+      this.userName = userName;
+      this.#password = password;
+    }
+   
+  
+    login(userName, password) {
+      if (userName === this.userName && password === this.#password) {
+        console.log('Login Successfully');
+      } else {
+        console.log('Authentication Failed!!');
+      }
+    }
+  
+    setPassword(newPassword) {  //Encapsulation
+      this.#password = newPassword;
+    }
+
+    
+    getNationality(Nationality){
+      this.Nationality= Nationality
+  }   
+
+  #isInidan(Nationality) { //abstraction
+    // check Nationality
+    let d = "Indian"
+    if(d===this.Nationality)
+    {return true;}
+    else
+    {
+      return false
+    }
+  }
+  showNationality()
+  {   let isValidate= false 
+      isValidate= this.#isInidan()
+
+      if(isValidate){
+          return' You are an Indian'
+      }
+      else{
+        return 'You are not an Indian'
+      }
+  }
+    cartInfor(){
+      return' Your cart is empty'
+    }
+
+  }
+
+  class Author extends User { 
+    #numOfPost;
+  
+    constructor(name, userName, password) {
+      super(name, userName, password);
+      this.#numOfPost = 0;
+    }
+  
+    createPost(content) {
+      // add content to your DB. :)
+      this.#numOfPost++;
+    }
+
+    getNumOfPost() {
+      return this.#numOfPost;
+    }
+    cartInfor(){ // Method over riding - polymorphism
+      return' You have one item in your cart'
+    }
+  
+  }
+  
+  const u= new User();
+  u.getNationality('African');
+  console.log(u.showNationality());
+  const t = new  Author('Siyayoudeen', 'Siya', 'holidays');
+  
+  t.login('Siya', 'holidays'); // Login Successfully
+  t.createPost('leave your feedback :)');
+  t.createPost('leave your feedback :)');
+  console.log(t.getNumOfPost());
+ 
+  console.log(t.name); // Siyayoudeen
+  console.log(t.password); // undefined
+  // console.log(nehal.#password); // Syntax Error
+
+  t.setPassword('moreholidays');
+  t.login('Siya', 'holidays'); // Authentication Failed!!
+  t.login('Siya', 'moreholidays'); // Login Successfully
+ console.log( t.cartInfor());
+console.log(u.cartInfor());
+
+
+
+
+
+
